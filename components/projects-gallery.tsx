@@ -15,8 +15,8 @@ export function ProjectsGallery() {
       ? projects
       : projects.filter((p) => p.category === filter)
 
-  const filters: { id: Filter; label: string; en: string }[] = [
-    { id: 'all', label: '全部', en: 'All' },
+  const filters: { id: Filter; label: string; zh: string }[] = [
+    { id: 'all', label: 'All', zh: '全部' },
     ...categories,
   ]
 
@@ -35,10 +35,8 @@ export function ProjectsGallery() {
                 : 'border-border text-muted-foreground hover:border-foreground hover:text-foreground',
             )}
           >
-            <span>{f.label}</span>
-            <span className="text-[10px] uppercase tracking-widest opacity-70">
-              {f.en}
-            </span>
+            <span className="uppercase tracking-wide">{f.label}</span>
+            <span className="text-[10px] opacity-70">{f.zh}</span>
           </button>
         ))}
       </div>
@@ -51,7 +49,7 @@ export function ProjectsGallery() {
 
       {filtered.length === 0 && (
         <p className="py-16 text-center text-sm text-muted-foreground">
-          该分类下暂无作品。No projects in this category yet.
+          No projects in this category yet. 该分类下暂无作品。
         </p>
       )}
     </section>

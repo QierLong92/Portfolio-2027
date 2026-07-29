@@ -13,17 +13,17 @@ export function ContactForm() {
   if (submitted) {
     return (
       <div className="border border-border bg-card p-8">
-        <h3 className="font-serif text-2xl">收到，谢谢！Thank you.</h3>
+        <h3 className="font-serif text-2xl">Thank you! 收到，谢谢。</h3>
         <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-          你的消息已经送达，我会尽快回复你。
           Your message has been sent — I&apos;ll get back to you soon.
+          你的消息已经送达，我会尽快回复你。
         </p>
         <button
           type="button"
           onClick={() => setSubmitted(false)}
           className="mt-6 border border-border px-4 py-2 text-sm transition-colors hover:border-foreground"
         >
-          再写一封 Send another
+          Send another 再写一封
         </button>
       </div>
     )
@@ -32,17 +32,17 @@ export function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-6">
       <div className="grid gap-6 md:grid-cols-2">
-        <Field label="姓名 Name" htmlFor="name">
+        <Field label="Name 姓名" htmlFor="name">
           <input
             id="name"
             name="name"
             type="text"
             required
-            placeholder="你的名字"
+            placeholder="Your name"
             className="w-full border-b border-border bg-transparent py-2 text-sm outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-foreground"
           />
         </Field>
-        <Field label="邮箱 Email" htmlFor="email">
+        <Field label="Email 邮箱" htmlFor="email">
           <input
             id="email"
             name="email"
@@ -54,12 +54,12 @@ export function ContactForm() {
         </Field>
       </div>
 
-      <Field label="主题 Subject" htmlFor="subject">
+      <Field label="Subject 主题" htmlFor="subject">
         <input
           id="subject"
           name="subject"
           type="text"
-          placeholder="想聊些什么？"
+          placeholder="What would you like to talk about?"
           className="w-full border-b border-border bg-transparent py-2 text-sm outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-foreground"
         />
       </Field>

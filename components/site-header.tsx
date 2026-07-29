@@ -6,10 +6,10 @@ import { useState } from 'react'
 import { cn } from '@/lib/utils'
 
 const nav = [
-  { href: '/', label: '首页', en: 'Home' },
-  { href: '/projects', label: '作品', en: 'Projects' },
-  { href: '/resume', label: '简历', en: 'Resume' },
-  { href: '/contact', label: '联系', en: 'Contact' },
+  { href: '/', label: 'Home', zh: '首页' },
+  { href: '/projects', label: 'Projects', zh: '作品' },
+  { href: '/resume', label: 'Resume', zh: '简历' },
+  { href: '/contact', label: 'Contact', zh: '联系' },
 ]
 
 export function SiteHeader() {
@@ -21,7 +21,7 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 md:px-10">
         <Link href="/" className="flex flex-col leading-none">
           <span className="font-serif text-lg font-semibold tracking-tight">
-            林澜 Lin Lan
+            Lin Lan 林澜
           </span>
           <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
             Design Portfolio
@@ -46,8 +46,8 @@ export function SiteHeader() {
                 )}
               >
                 <span>{item.label}</span>
-                <span className="text-xs uppercase tracking-widest text-muted-foreground/70">
-                  {item.en}
+                <span className="text-xs text-muted-foreground/70">
+                  {item.zh}
                 </span>
               </Link>
             )
@@ -88,8 +88,8 @@ export function SiteHeader() {
                 )}
               >
                 <span>{item.label}</span>
-                <span className="text-xs uppercase tracking-widest text-muted-foreground/70">
-                  {item.en}
+                <span className="text-xs text-muted-foreground/70">
+                  {item.zh}
                 </span>
               </Link>
             )

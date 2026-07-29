@@ -15,7 +15,7 @@ export function ProjectCard({
       <div className="relative aspect-[4/3] overflow-hidden bg-muted">
         <Image
           src={project.image || '/placeholder.svg'}
-          alt={`${project.title} 作品预览`}
+          alt={`${project.titleEn} — project preview`}
           fill
           priority={priority}
           sizes="(max-width: 768px) 100vw, 50vw"
@@ -24,17 +24,17 @@ export function ProjectCard({
       </div>
       <div className="mt-4 flex items-start justify-between gap-4">
         <div>
-          <h3 className="font-serif text-xl leading-tight">{project.title}</h3>
-          <p className="mt-1 text-sm text-muted-foreground">
+          <h3 className="font-serif text-xl leading-tight">
             {project.titleEn}
-          </p>
+          </h3>
+          <p className="mt-1 text-sm text-muted-foreground">{project.title}</p>
         </div>
         <span className="shrink-0 pt-1 text-xs uppercase tracking-widest text-muted-foreground">
           {project.year}
         </span>
       </div>
       <div className="mt-3 flex items-center gap-3 text-xs uppercase tracking-widest text-muted-foreground">
-        <span className="border border-border px-2 py-1">{category?.en}</span>
+        <span className="border border-border px-2 py-1">{category?.label}</span>
         <span>{project.role}</span>
       </div>
     </article>

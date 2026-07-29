@@ -8,31 +8,31 @@ export const metadata: Metadata = {
 
 const experience = [
   {
-    period: '2023 — 至今',
-    role: '独立设计师 / Independent Designer',
-    org: '自由职业 · Freelance',
-    desc: '为品牌与机构提供视觉识别、信息设计与产品设计服务。',
+    period: '2023 — Now',
+    role: 'Independent Designer 独立设计师',
+    org: 'Freelance · 自由职业',
+    desc: 'Providing visual identity, information design and product design services for brands and institutions. 为品牌与机构提供视觉识别、信息设计与产品设计服务。',
   },
   {
     period: '2021 — 2023',
-    role: '高级设计师 / Senior Designer',
+    role: 'Senior Designer 高级设计师',
     org: 'Studio Meridian',
-    desc: '主导多个品牌与数字产品项目，建立并维护设计系统。',
+    desc: 'Led multiple brand and digital product projects, building and maintaining design systems. 主导多个品牌与数字产品项目，建立并维护设计系统。',
   },
   {
     period: '2019 — 2021',
-    role: '设计师 / Designer',
+    role: 'Designer 设计师',
     org: 'Northlight Agency',
-    desc: '参与编辑排版、信息图与网页界面的设计与落地。',
+    desc: 'Designed and shipped editorial layouts, infographics and web interfaces. 参与编辑排版、信息图与网页界面的设计与落地。',
   },
 ]
 
 const education = [
   {
     period: '2015 — 2019',
-    role: '视觉传达设计 学士',
-    org: '中央美术学院 · CAFA',
-    desc: 'BFA in Visual Communication Design.',
+    role: 'BFA, Visual Communication Design 视觉传达设计 学士',
+    org: 'China Central Academy of Fine Arts · 中央美术学院',
+    desc: 'Bachelor of Fine Arts in Visual Communication Design.',
   },
 ]
 
@@ -50,9 +50,9 @@ const skills = [
 ]
 
 const awards = [
-  { year: '2024', title: 'D&AD 木铅笔 · Wood Pencil', note: 'Echo Festival' },
-  { year: '2023', title: 'Type Directors Club 入选', note: 'Type Poster Study' },
-  { year: '2022', title: 'Kantar 信息之美奖', note: 'City Breath Atlas' },
+  { year: '2024', title: 'D&AD Wood Pencil 木铅笔', note: 'Echo Festival' },
+  { year: '2023', title: 'Type Directors Club Selection 入选', note: 'Type Poster Study' },
+  { year: '2022', title: 'Kantar Information is Beautiful Award 信息之美奖', note: 'City Breath Atlas' },
 ]
 
 export default function ResumePage() {
@@ -62,25 +62,25 @@ export default function ResumePage() {
       <section className="border-b border-border py-16 md:py-20">
         <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="text-sm text-muted-foreground">简历 · Resume</p>
+            <p className="text-sm text-muted-foreground">Resume · 简历</p>
             <h1 className="mt-4 font-serif text-4xl leading-[1.1] md:text-6xl">
-              林澜 Lin Lan
+              Lin Lan 林澜
             </h1>
             <p className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">
-              跨学科设计师，现居上海。专注平面、信息与 UI/UX 设计。
-              Multidisciplinary designer based in Shanghai.
+              Multidisciplinary designer based in Shanghai, focused on graphic,
+              information and UI/UX design. 跨学科设计师，现居上海。
             </p>
             <a
               href="mailto:hello@linlan.design"
               className="mt-6 inline-flex items-center gap-2 border border-border px-5 py-2.5 text-sm transition-colors hover:border-foreground"
             >
-              下载 PDF / Download CV
+              Download CV 下载简历
             </a>
           </div>
           <div className="relative h-40 w-32 shrink-0 overflow-hidden bg-muted grayscale">
             <Image
               src="/portrait.png"
-              alt="林澜的肖像照"
+              alt="Portrait of Lin Lan"
               fill
               sizes="128px"
               className="object-cover"
@@ -92,10 +92,8 @@ export default function ResumePage() {
       {/* Experience + Education */}
       <section className="grid gap-x-12 gap-y-16 py-16 md:grid-cols-3">
         <h2 className="font-serif text-2xl md:text-3xl">
-          经历
-          <span className="mt-1 block text-sm uppercase tracking-widest text-muted-foreground">
-            Experience
-          </span>
+          Experience
+          <span className="mt-1 block text-sm text-muted-foreground">经历</span>
         </h2>
         <div className="md:col-span-2">
           <ul className="flex flex-col">
@@ -122,10 +120,8 @@ export default function ResumePage() {
 
       <section className="grid gap-x-12 gap-y-16 border-t border-border py-16 md:grid-cols-3">
         <h2 className="font-serif text-2xl md:text-3xl">
-          教育
-          <span className="mt-1 block text-sm uppercase tracking-widest text-muted-foreground">
-            Education
-          </span>
+          Education
+          <span className="mt-1 block text-sm text-muted-foreground">教育</span>
         </h2>
         <div className="md:col-span-2">
           <ul className="flex flex-col">
@@ -153,10 +149,8 @@ export default function ResumePage() {
       {/* Skills */}
       <section className="grid gap-x-12 gap-y-8 border-t border-border py-16 md:grid-cols-3">
         <h2 className="font-serif text-2xl md:text-3xl">
-          技能
-          <span className="mt-1 block text-sm uppercase tracking-widest text-muted-foreground">
-            Skills
-          </span>
+          Skills
+          <span className="mt-1 block text-sm text-muted-foreground">技能</span>
         </h2>
         <div className="flex flex-wrap gap-2 md:col-span-2">
           {skills.map((skill) => (
@@ -173,10 +167,8 @@ export default function ResumePage() {
       {/* Awards */}
       <section className="grid gap-x-12 gap-y-8 border-t border-border py-16 md:grid-cols-3">
         <h2 className="font-serif text-2xl md:text-3xl">
-          荣誉
-          <span className="mt-1 block text-sm uppercase tracking-widest text-muted-foreground">
-            Awards
-          </span>
+          Awards
+          <span className="mt-1 block text-sm text-muted-foreground">荣誉</span>
         </h2>
         <div className="md:col-span-2">
           <ul className="flex flex-col">

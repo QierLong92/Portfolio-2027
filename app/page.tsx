@@ -9,26 +9,27 @@ export default function HomePage() {
     <main className="mx-auto max-w-6xl px-6 md:px-10">
       {/* Hero */}
       <section className="border-b border-border py-16 md:py-24">
-        <p className="text-sm text-muted-foreground">下午好 · Good afternoon</p>
+        <p className="text-sm text-muted-foreground">Good afternoon · 下午好</p>
         <h1 className="mt-6 max-w-4xl font-serif text-4xl leading-[1.1] text-balance md:text-6xl">
-          我是林澜，一名跨越平面、信息与 UI/UX 的设计师。
+          I&apos;m Lin Lan, a multidisciplinary designer across graphic,
+          information and UI/UX design.
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-          I&apos;m Lin Lan, a multidisciplinary designer working across graphic
-          design, information design and UI/UX. 我相信好的设计始于清晰的结构与恰当的留白。
+          I believe good design starts with a clear structure and the right
+          amount of whitespace. 我是林澜，相信好的设计始于清晰的结构与恰当的留白。
         </p>
         <div className="mt-8 flex flex-wrap gap-4">
           <Link
             href="/projects"
             className="inline-flex items-center gap-2 bg-foreground px-5 py-2.5 text-sm text-background transition-opacity hover:opacity-80"
           >
-            查看作品 View Projects
+            View Projects 查看作品
           </Link>
           <Link
             href="/resume"
             className="inline-flex items-center gap-2 border border-border px-5 py-2.5 text-sm transition-colors hover:border-foreground"
           >
-            简历 Resume
+            Resume 简历
           </Link>
         </div>
       </section>
@@ -42,9 +43,7 @@ export default function HomePage() {
                 0{i + 1}
               </span>
               <span className="font-serif text-lg">{c.label}</span>
-              <span className="text-xs uppercase tracking-widest text-muted-foreground">
-                {c.en}
-              </span>
+              <span className="text-xs text-muted-foreground">{c.zh}</span>
             </div>
           ))}
         </div>
@@ -54,13 +53,13 @@ export default function HomePage() {
       <section className="py-12 md:py-16">
         <div className="mb-8 flex items-baseline justify-between">
           <h2 className="font-serif text-2xl md:text-3xl">
-            精选作品 <span className="text-muted-foreground">Selected Work</span>
+            Selected Work <span className="text-muted-foreground">精选作品</span>
           </h2>
           <Link
             href="/projects"
             className="text-sm text-muted-foreground hover:text-foreground"
           >
-            全部 →
+            All →
           </Link>
         </div>
         <div className="grid gap-x-8 gap-y-12 md:grid-cols-2">

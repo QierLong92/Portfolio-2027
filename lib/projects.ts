@@ -1,10 +1,10 @@
 export type Category = 'graphic' | 'information' | 'uiux' | 'others'
 
-export const categories: { id: Category; label: string; en: string }[] = [
-  { id: 'graphic', label: '平面设计', en: 'Graphic Design' },
-  { id: 'information', label: '信息设计', en: 'Information Design' },
-  { id: 'uiux', label: 'UI/UX 设计', en: 'UI/UX Design' },
-  { id: 'others', label: '其他', en: 'Others' },
+export const categories: { id: Category; label: string; zh: string }[] = [
+  { id: 'graphic', label: 'Graphic Design', zh: '平面设计' },
+  { id: 'information', label: 'Information Design', zh: '信息设计' },
+  { id: 'uiux', label: 'UI/UX Design', zh: 'UI/UX 设计' },
+  { id: 'others', label: 'Others', zh: '其他' },
 ]
 
 export type Project = {
@@ -27,7 +27,7 @@ export const projects: Project[] = [
     year: '2025',
     role: 'Brand / Art Direction',
     summary:
-      '为一家可持续食品品牌打造的完整视觉识别系统，包含标志、印刷物与包装。A complete identity system for a sustainable food brand.',
+      'A complete visual identity system for a sustainable food brand, spanning logo, print collateral and packaging. 为一家可持续食品品牌打造的完整视觉识别系统。',
     image: '/work/verdant-branding.png',
   },
   {
@@ -38,7 +38,7 @@ export const projects: Project[] = [
     year: '2024',
     role: 'Poster / Typography',
     summary:
-      '以瑞士排版为基底的音乐节海报系列，强对比黑白配单一暖色。A swiss-typography poster series for a music festival.',
+      'A swiss-typography poster series for a music festival, built on high-contrast black and white with a single warm accent. 以瑞士排版为基底的音乐节海报系列。',
     image: '/work/echo-festival.png',
   },
   {
@@ -49,7 +49,7 @@ export const projects: Project[] = [
     year: '2025',
     role: 'Data Viz / Editorial',
     summary:
-      '一份关于城市空气质量的信息设计图谱，用径向图讲述一年的呼吸。An information design atlas about a city breathing over a year.',
+      'An information design atlas on urban air quality, telling a year of a city breathing through radial charts. 一份关于城市空气质量的信息设计图谱。',
     image: '/work/city-breath-data.png',
   },
   {
@@ -60,7 +60,7 @@ export const projects: Project[] = [
     year: '2024',
     role: 'Infographic / Layout',
     summary:
-      '为环境机构设计的年度气候报告，将复杂数据转化为可读的编辑版式。Turning complex climate data into a readable editorial report.',
+      'An annual climate report for an environmental agency, turning complex data into a readable editorial layout. 为环境机构设计的年度气候报告。',
     image: '/work/climate-report.png',
   },
   {
@@ -71,7 +71,7 @@ export const projects: Project[] = [
     year: '2025',
     role: 'Product Design',
     summary:
-      '一款主打呼吸练习的冥想应用，界面克制、色调柔和、动效轻盈。A meditation app centered on breathing, calm and gentle.',
+      'A meditation app centered on breathing exercises — restrained UI, soft tones and light motion. 一款主打呼吸练习的冥想应用。',
     image: '/work/loop-meditation.png',
   },
   {
@@ -82,7 +82,7 @@ export const projects: Project[] = [
     year: '2024',
     role: 'UX / Systems',
     summary:
-      '城市公共出行调度后台，梳理复杂时刻表与地图数据的信息层级。A transit operations dashboard organizing complex schedule data.',
+      'A public transit operations dashboard organizing complex schedule and map data into a clear hierarchy. 城市公共出行调度后台。',
     image: '/work/ferry-dashboard.png',
   },
   {
@@ -93,7 +93,7 @@ export const projects: Project[] = [
     year: '2023',
     role: 'Craft / Bookbinding',
     summary:
-      '一组暴露线装的手工书装帧实验，探索纸张、结构与触感。A set of exposed-binding handmade book experiments.',
+      'A set of exposed-binding handmade book experiments exploring paper, structure and touch. 一组暴露线装的手工书装帧实验。',
     image: '/work/handmade-book.png',
   },
   {
@@ -104,7 +104,7 @@ export const projects: Project[] = [
     year: '2023',
     role: 'Typography / Experiment',
     summary:
-      '把衬线字形拆解到网格里的实验性字体海报。An experimental poster deconstructing serif letterforms on a grid.',
+      'An experimental poster deconstructing serif letterforms across a grid. 把衬线字形拆解到网格里的实验性字体海报。',
     image: '/work/type-poster.png',
   },
 ]
