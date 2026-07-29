@@ -1,0 +1,42 @@
+import Image from 'next/image'
+import { categories, type Project } from '@/lib/projects'
+
+export function ProjectCard({
+  project,
+  priority = false,
+}: {
+  project: Project
+  priority?: boolean
+}) {
+  const category = categories.find((c) => c.id === project.category)
+
+  return (
+    <article className="group">
+      <div className="relative aspect-[4/3] overflow-hidden bg-muted">
+        <Image
+          src={project.image || '/placeholder.svg'}
+          alt={`${project.title} 作品预览`}
+          fill
+          priority={priority}
+          sizes="(max-width: 768px) 100vw, 50vw"
+          className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+        />
+      </div>
+      <div className="mt-4 flex items-start justify-between gap-4">
+        <div>
+          <h3 className="font-serif text-xl leading-tight">{project.title}</h3>
+          <p className="mt-1 text-sm text-muted-foreground">
+            {project.titleEn}
+          </p>
+        </div>
+        <span className="shrink-0 pt-1 text-xs uppercase tracking-widest text-muted-foreground">
+          {project.year}
+        </span>
+      </div>
+      <div className="mt-3 flex items-center gap-3 text-xs uppercase tracking-widest text-muted-foreground">
+        <span className="border border-border px-2 py-1">{category?.en}</span>
+        <span>{project.role}</span>
+      </div>
+    </article>
+  )
+}
