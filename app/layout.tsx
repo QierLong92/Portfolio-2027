@@ -18,9 +18,9 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: '林澜 Lin Lan — 设计作品集 / Design Portfolio',
+  title: 'Qier Long — Design Portfolio',
   description:
-    '林澜的个人设计作品集，涵盖平面设计、信息设计、UI/UX 设计等方向。A personal design portfolio spanning graphic, information, UI/UX design and more.',
+    'Qier Long’s personal design portfolio spanning graphic, information, UI/UX design and more.',
   generator: 'v0.app',
   icons: {
     icon: [

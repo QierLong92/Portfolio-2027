@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { ProjectCard } from '@/components/project-card'
 import { categories, projects } from '@/lib/projects'
+import { Localized } from '@/components/localized'
 
 export default function HomePage() {
   const featured = projects.slice(0, 4)
@@ -9,27 +10,33 @@ export default function HomePage() {
     <main className="mx-auto max-w-6xl px-6 md:px-10">
       {/* Hero */}
       <section className="border-b border-border py-16 md:py-24">
-        <p className="text-sm text-muted-foreground">Good afternoon · 下午好</p>
+        <p className="text-sm text-muted-foreground">
+          <Localized en="Good afternoon" zh="下午好" />
+        </p>
         <h1 className="mt-6 max-w-4xl font-serif text-4xl leading-[1.1] text-balance md:text-6xl">
-          I&apos;m Lin Lan, a multidisciplinary designer across graphic,
-          information and UI/UX design.
+          <Localized
+            en="I'm Qier Long, a multidisciplinary designer across graphic, information and UI/UX design."
+            zh="我是 Qier Long，一名跨越平面、信息与 UI/UX 设计领域的设计师。"
+          />
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-          I believe good design starts with a clear structure and the right
-          amount of whitespace. 我是林澜，相信好的设计始于清晰的结构与恰当的留白。
+          <Localized
+            en="I believe good design starts with a clear structure and the right amount of whitespace."
+            zh="我相信好的设计始于清晰的结构与恰当的留白。"
+          />
         </p>
         <div className="mt-8 flex flex-wrap gap-4">
           <Link
             href="/projects"
             className="inline-flex items-center gap-2 bg-foreground px-5 py-2.5 text-sm text-background transition-opacity hover:opacity-80"
           >
-            View Projects 查看作品
+            <Localized en="View Projects" zh="查看作品" />
           </Link>
           <Link
             href="/resume"
             className="inline-flex items-center gap-2 border border-border px-5 py-2.5 text-sm transition-colors hover:border-foreground"
           >
-            Resume 简历
+            <Localized en="Resume" zh="简历" />
           </Link>
         </div>
       </section>
@@ -42,8 +49,9 @@ export default function HomePage() {
               <span className="font-serif text-2xl text-muted-foreground">
                 0{i + 1}
               </span>
-              <span className="font-serif text-lg">{c.label}</span>
-              <span className="text-xs text-muted-foreground">{c.zh}</span>
+              <span className="font-serif text-lg">
+                <Localized en={c.label} zh={c.zh} />
+              </span>
             </div>
           ))}
         </div>
@@ -53,13 +61,13 @@ export default function HomePage() {
       <section className="py-12 md:py-16">
         <div className="mb-8 flex items-baseline justify-between">
           <h2 className="font-serif text-2xl md:text-3xl">
-            Selected Work <span className="text-muted-foreground">精选作品</span>
+            <Localized en="Selected Work" zh="精选作品" />
           </h2>
           <Link
             href="/projects"
             className="text-sm text-muted-foreground hover:text-foreground"
           >
-            All →
+            <Localized en="All →" zh="全部 →" />
           </Link>
         </div>
         <div className="grid gap-x-8 gap-y-12 md:grid-cols-2">

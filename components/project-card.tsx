@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { categories, type Project } from '@/lib/projects'
+import { Localized } from '@/components/localized'
 
 export function ProjectCard({
   project,
@@ -25,17 +26,20 @@ export function ProjectCard({
       <div className="mt-4 flex items-start justify-between gap-4">
         <div>
           <h3 className="font-serif text-xl leading-tight">
-            {project.titleEn}
+            <Localized en={project.titleEn} zh={project.title} />
           </h3>
-          <p className="mt-1 text-sm text-muted-foreground">{project.title}</p>
         </div>
         <span className="shrink-0 pt-1 text-xs uppercase tracking-widest text-muted-foreground">
           {project.year}
         </span>
       </div>
       <div className="mt-3 flex items-center gap-3 text-xs uppercase tracking-widest text-muted-foreground">
-        <span className="border border-border px-2 py-1">{category?.label}</span>
-        <span>{project.role}</span>
+        <span className="border border-border px-2 py-1">
+          <Localized en={category?.label} zh={category?.zh} />
+        </span>
+        <span>
+          <Localized en={project.role} zh={project.roleZh} />
+        </span>
       </div>
     </article>
   )

@@ -1,9 +1,22 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { Localized } from '@/components/localized'
 
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false)
+  const [language, setLanguage] = useState<'en' | 'zh'>('en')
+
+  useEffect(() => {
+    const savedLanguage = window.localStorage.getItem('portfolio-language')
+    if (savedLanguage === 'zh') setLanguage('zh')
+
+    const handleLanguageChange = (event: Event) => {
+      setLanguage((event as CustomEvent<'en' | 'zh'>).detail)
+    }
+    window.addEventListener('portfolio-language-change', handleLanguageChange)
+    return () => window.removeEventListener('portfolio-language-change', handleLanguageChange)
+  }, [])
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -13,17 +26,19 @@ export function ContactForm() {
   if (submitted) {
     return (
       <div className="border border-border bg-card p-8">
-        <h3 className="font-serif text-2xl">Thank you! 收到，谢谢。</h3>
+        <h3 className="font-serif text-2xl"><Localized en="Thank you!" zh="收到，谢谢。" /></h3>
         <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-          Your message has been sent — I&apos;ll get back to you soon.
-          你的消息已经送达，我会尽快回复你。
+          <Localized
+            en="Your message has been sent — I'll get back to you soon."
+            zh="你的消息已经送达，我会尽快回复你。"
+          />
         </p>
         <button
           type="button"
           onClick={() => setSubmitted(false)}
           className="mt-6 border border-border px-4 py-2 text-sm transition-colors hover:border-foreground"
         >
-          Send another 再写一封
+          <Localized en="Send another" zh="再写一封" />
         </button>
       </div>
     )
@@ -32,17 +47,17 @@ export function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-6">
       <div className="grid gap-6 md:grid-cols-2">
-        <Field label="Name 姓名" htmlFor="name">
+        <Field label={<Localized en="Name" zh="姓名" />} htmlFor="name">
           <input
             id="name"
             name="name"
             type="text"
             required
-            placeholder="Your name"
+            placeholder={language === 'en' ? 'Your name' : '你的姓名'}
             className="w-full border-b border-border bg-transparent py-2 text-sm outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-foreground"
           />
         </Field>
-        <Field label="Email 邮箱" htmlFor="email">
+        <Field label={<Localized en="Email" zh="邮箱" />} htmlFor="email">
           <input
             id="email"
             name="email"
@@ -54,23 +69,23 @@ export function ContactForm() {
         </Field>
       </div>
 
-      <Field label="Subject 主题" htmlFor="subject">
+      <Field label={<Localized en="Subject" zh="主题" />} htmlFor="subject">
         <input
           id="subject"
           name="subject"
           type="text"
-          placeholder="What would you like to talk about?"
+          placeholder={language === 'en' ? 'What would you like to talk about?' : '想聊些什么？'}
           className="w-full border-b border-border bg-transparent py-2 text-sm outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-foreground"
         />
       </Field>
 
-      <Field label="信息 Message" htmlFor="message">
+      <Field label={<Localized en="Message" zh="信息" />} htmlFor="message">
         <textarea
           id="message"
           name="message"
           required
           rows={5}
-          placeholder="告诉我你的项目或想法……"
+          placeholder={language === 'en' ? 'Tell me about your project or idea…' : '告诉我你的项目或想法……'}
           className="w-full resize-none border-b border-border bg-transparent py-2 text-sm outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-foreground"
         />
       </Field>
@@ -79,7 +94,7 @@ export function ContactForm() {
         type="submit"
         className="mt-2 inline-flex w-fit items-center gap-2 bg-foreground px-6 py-3 text-sm text-background transition-opacity hover:opacity-80"
       >
-        发送 Send message
+        <Localized en="Send message" zh="发送" />
       </button>
     </form>
   )
@@ -90,7 +105,7 @@ function Field({
   htmlFor,
   children,
 }: {
-  label: string
+  label: React.ReactNode
   htmlFor: string
   children: React.ReactNode
 }) {

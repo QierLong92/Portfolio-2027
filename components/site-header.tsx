@@ -4,6 +4,8 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 import { cn } from '@/lib/utils'
+import { LanguageToggle } from '@/components/language-toggle'
+import { Localized } from '@/components/localized'
 
 const nav = [
   { href: '/', label: 'Home', zh: '首页' },
@@ -18,16 +20,17 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/85 backdrop-blur-sm">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 md:px-10">
+      <div className="mx-auto flex max-w-6xl items-center justify-between pb-4 pl-[max(1.5rem,env(safe-area-inset-left))] pr-[max(1.5rem,env(safe-area-inset-right))] pt-[max(1rem,env(safe-area-inset-top))] md:px-10">
         <Link href="/" className="flex flex-col leading-none">
           <span className="font-serif text-lg font-semibold tracking-tight">
-            Lin Lan 林澜
+            Qier Long
           </span>
           <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-            Design Portfolio
+            <Localized en="Design Portfolio" zh="设计作品集" />
           </span>
         </Link>
 
+        <div className="flex items-center gap-3 md:gap-8">
         <nav className="hidden items-center gap-8 md:flex">
           {nav.map((item) => {
             const active =
@@ -45,14 +48,13 @@ export function SiteHeader() {
                     : 'text-muted-foreground hover:text-foreground',
                 )}
               >
-                <span>{item.label}</span>
-                <span className="text-xs text-muted-foreground/70">
-                  {item.zh}
-                </span>
+                <Localized en={item.label} zh={item.zh} />
               </Link>
             )
           })}
         </nav>
+
+        <LanguageToggle />
 
         <button
           type="button"
@@ -68,6 +70,7 @@ export function SiteHeader() {
             <span className="block h-px w-4 bg-foreground" />
           </div>
         </button>
+        </div>
       </div>
 
       {open && (
@@ -87,10 +90,7 @@ export function SiteHeader() {
                   active ? 'text-foreground' : 'text-muted-foreground',
                 )}
               >
-                <span>{item.label}</span>
-                <span className="text-xs text-muted-foreground/70">
-                  {item.zh}
-                </span>
+                <Localized en={item.label} zh={item.zh} />
               </Link>
             )
           })}

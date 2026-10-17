@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { ProjectCard } from '@/components/project-card'
 import { categories, projects, type Category } from '@/lib/projects'
 import { cn } from '@/lib/utils'
+import { Localized } from '@/components/localized'
 
 type Filter = Category | 'all'
 
@@ -35,8 +36,9 @@ export function ProjectsGallery() {
                 : 'border-border text-muted-foreground hover:border-foreground hover:text-foreground',
             )}
           >
-            <span className="uppercase tracking-wide">{f.label}</span>
-            <span className="text-[10px] opacity-70">{f.zh}</span>
+            <span className="uppercase tracking-wide">
+              <Localized en={f.label} zh={f.zh} />
+            </span>
           </button>
         ))}
       </div>
@@ -49,7 +51,10 @@ export function ProjectsGallery() {
 
       {filtered.length === 0 && (
         <p className="py-16 text-center text-sm text-muted-foreground">
-          No projects in this category yet. 该分类下暂无作品。
+          <Localized
+            en="No projects in this category yet."
+            zh="该分类下暂无作品。"
+          />
         </p>
       )}
     </section>
