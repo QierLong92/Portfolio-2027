@@ -105,6 +105,18 @@ export const projects: Project[] = [
     image: '/work/saline-music-repair/cover.png',
   },
   {
+    slug: 'nypd-website-redesign',
+    title: 'NYPD 网站改版',
+    titleEn: 'NYPD Website Redesign',
+    category: 'uiux',
+    year: '2025',
+    role: 'UX/UI Design',
+    roleZh: 'UX/UI 设计',
+    summary:
+      'A responsive website redesign for New York Pizza Depot, balancing local character, menu discovery, and a clearer ordering journey. 为纽约披萨店打造的响应式网站改版，平衡本地品牌个性、菜单浏览与清晰的下单流程。',
+    image: '/work/nypd/responsive-web-full.png',
+  },
+  {
     slug: 'handmade-book',
     title: '手工书 装帧实验',
     titleEn: 'Handmade Book Binding',

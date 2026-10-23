@@ -8,11 +8,14 @@ export const metadata: Metadata = {
 }
 
 const channels = [
-  { label: 'Email', zh: '邮箱', value: 'hello@linlan.design', href: 'mailto:hello@linlan.design' },
+  { label: 'Email', zh: '邮箱', value: 'longqi@umich.edu', href: 'mailto:longqi@umich.edu' },
   { label: 'Location', zh: '所在地', value: 'Shanghai, CN', valueZh: '中国上海', href: undefined },
-  { label: 'Instagram', zh: 'Instagram', value: '@linlan.design', href: '#' },
-  { label: 'Behance', zh: 'Behance', value: 'behance.net/linlan', href: '#' },
-  { label: 'LinkedIn', zh: 'LinkedIn', value: 'in/linlan', href: '#' },
+  {
+    label: 'LinkedIn',
+    zh: 'LinkedIn',
+    value: 'linkedin.com/in/qier-long-a22870251',
+    href: 'https://www.linkedin.com/in/qier-long-a22870251/',
+  },
 ]
 
 export default function ContactPage() {

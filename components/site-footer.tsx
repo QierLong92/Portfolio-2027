@@ -27,23 +27,22 @@ export function SiteFooter() {
                 <Localized en="Email" zh="邮箱" />
               </span>
               <a
-                href="mailto:hello@linlan.design"
+                href="mailto:longqi@umich.edu"
                 className="hover:text-accent"
               >
-                hello@linlan.design
+                longqi@umich.edu
               </a>
             </div>
             <div className="flex flex-col gap-2">
               <span className="text-xs uppercase tracking-widest text-muted-foreground">
                 <Localized en="Social" zh="社交" />
               </span>
-              <a href="#" className="hover:text-accent">
-                Instagram
-              </a>
-              <a href="#" className="hover:text-accent">
-                Behance
-              </a>
-              <a href="#" className="hover:text-accent">
+              <a
+                href="https://www.linkedin.com/in/qier-long-a22870251/"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-accent"
+              >
                 LinkedIn
               </a>
             </div>

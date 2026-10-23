@@ -46,10 +46,11 @@ export function ProjectsGallery() {
 
       <div className="grid gap-x-8 gap-y-12 md:grid-cols-2">
         {filtered.map((project, i) =>
-          project.slug === 'saline-music-repair' ? (
+          project.slug === 'saline-music-repair' ||
+          project.slug === 'nypd-website-redesign' ? (
             <Link
               key={project.slug}
-              href="/projects/saline-music-repair"
+              href={`/projects/${project.slug}`}
               className="block"
             >
               <ProjectCard project={project} priority={i < 2} />

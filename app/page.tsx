@@ -4,7 +4,11 @@ import { categories, projects } from '@/lib/projects'
 import { Localized } from '@/components/localized'
 
 export default function HomePage() {
-  const featured = projects.slice(0, 4)
+  const featured = projects.filter(
+    (project) =>
+      project.slug === 'saline-music-repair' ||
+      project.slug === 'nypd-website-redesign',
+  )
 
   return (
     <main className="mx-auto max-w-6xl px-6 md:px-10">
@@ -72,7 +76,7 @@ export default function HomePage() {
         </div>
         <div className="grid gap-x-8 gap-y-12 md:grid-cols-2">
           {featured.map((project, i) => (
-            <Link key={project.slug} href="/projects">
+            <Link key={project.slug} href={`/projects/${project.slug}`}>
               <ProjectCard project={project} priority={i < 2} />
             </Link>
           ))}
