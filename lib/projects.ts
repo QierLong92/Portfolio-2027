@@ -93,6 +93,30 @@ export const projects: Project[] = [
     image: '/work/ferry-dashboard.png',
   },
   {
+    slug: 'saline-music-repair',
+    title: 'Saline 音乐维修应用',
+    titleEn: 'Saline Music Repair App',
+    category: 'uiux',
+    year: '2026',
+    role: 'UX/UI Design',
+    roleZh: 'UX/UI 设计',
+    summary:
+      'A mobile service platform that brings instrument repair requests, transparent pricing, real-time status, and pickup logistics into one place. 面向本地乐器维修店的移动服务平台，整合维修申请、价格透明化、进度追踪与取件服务。',
+    image: '/work/saline-music-repair/cover.png',
+  },
+  {
+    slug: 'nypd-website-redesign',
+    title: 'NYPD 网站改版',
+    titleEn: 'NYPD Website Redesign',
+    category: 'uiux',
+    year: '2025',
+    role: 'UX/UI Design',
+    roleZh: 'UX/UI 设计',
+    summary:
+      'A responsive website redesign for New York Pizza Depot, balancing local character, menu discovery, and a clearer ordering journey. 为纽约披萨店打造的响应式网站改版，平衡本地品牌个性、菜单浏览与清晰的下单流程。',
+    image: '/work/nypd/responsive-web-full.png',
+  },
+  {
     slug: 'handmade-book',
     title: '手工书 装帧实验',
     titleEn: 'Handmade Book Binding',

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { ProjectsGallery } from '@/components/projects-gallery'
 import { Localized } from '@/components/localized'
 
@@ -30,6 +31,12 @@ export default function ProjectsPage() {
       </section>
 
       <ProjectsGallery />
+      <Link
+        href="/projects/saline-music-repair"
+        className="fixed bottom-[max(1.5rem,env(safe-area-inset-bottom))] right-[max(1.5rem,env(safe-area-inset-right))] z-40 bg-foreground px-4 py-3 text-sm text-background shadow-lg transition-opacity hover:opacity-80"
+      >
+        <Localized en="Featured case study →" zh="精选案例 →" />
+      </Link>
     </main>
   )
 }

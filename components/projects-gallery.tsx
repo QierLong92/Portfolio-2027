@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import { ProjectCard } from '@/components/project-card'
 import { categories, projects, type Category } from '@/lib/projects'
 import { cn } from '@/lib/utils'
@@ -44,9 +45,20 @@ export function ProjectsGallery() {
       </div>
 
       <div className="grid gap-x-8 gap-y-12 md:grid-cols-2">
-        {filtered.map((project, i) => (
-          <ProjectCard key={project.slug} project={project} priority={i < 2} />
-        ))}
+        {filtered.map((project, i) =>
+          project.slug === 'saline-music-repair' ||
+          project.slug === 'nypd-website-redesign' ? (
+            <Link
+              key={project.slug}
+              href={`/projects/${project.slug}`}
+              className="block"
+            >
+              <ProjectCard project={project} priority={i < 2} />
+            </Link>
+          ) : (
+            <ProjectCard key={project.slug} project={project} priority={i < 2} />
+          ),
+        )}
       </div>
 
       {filtered.length === 0 && (
