@@ -18,6 +18,13 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
+## Deployment
+
+The site is exported as a static Next.js site and deployed to GitHub Pages at
+`/Portfolio-2027/`. The GitHub Actions workflow builds the `out` directory,
+preserves the `_next` assets, and disables Jekyll processing so styles,
+scripts, fonts, and images are served correctly.
+
 ## Learn More
 
 To learn more, take a look at the following resources:

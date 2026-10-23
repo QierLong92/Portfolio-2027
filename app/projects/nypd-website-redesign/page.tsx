@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Localized } from '@/components/localized'
+import { sitePath } from '@/lib/site-path'
 
 export const metadata: Metadata = {
   title: 'NYPD Website Redesign — Qier Long',
@@ -42,6 +43,7 @@ export default function NypdWebsiteRedesignPage() {
       <section className="relative overflow-hidden bg-[#922b20] text-[#fff9ef]">
         <Image
           src="/work/nypd/responsive-web-full.png"
+          overrideSrc={sitePath('/work/nypd/responsive-web-full.png')}
           alt="NYPD responsive website across desktop, tablet, and mobile"
           width={2000}
           height={1125}
@@ -114,6 +116,7 @@ export default function NypdWebsiteRedesignPage() {
         <div className="mx-auto max-w-6xl">
           <Image
             src="/work/nypd/brand-gallery.png"
+            overrideSrc={sitePath('/work/nypd/brand-gallery.png')}
             alt="NYPD restaurant photography and brand imagery"
             width={2000}
             height={1400}
@@ -153,6 +156,7 @@ export default function NypdWebsiteRedesignPage() {
               </div>
               <Image
                 src={screen.image}
+                overrideSrc={sitePath(screen.image)}
                 alt={`${screen.title.en} interface`}
                 width={1800}
                 height={1200}
@@ -167,6 +171,7 @@ export default function NypdWebsiteRedesignPage() {
         <div className="mx-auto max-w-6xl">
           <Image
             src="/work/nypd/checkout-page.png"
+            overrideSrc={sitePath('/work/nypd/checkout-page.png')}
             alt="NYPD checkout flow"
             width={1600}
             height={1200}
@@ -198,6 +203,7 @@ export default function NypdWebsiteRedesignPage() {
           </div>
           <Image
             src="/work/nypd/responsive-web.png"
+            overrideSrc={sitePath('/work/nypd/responsive-web.png')}
             alt="NYPD responsive website system"
             width={2000}
             height={1000}

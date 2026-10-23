@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Localized } from '@/components/localized'
+import { sitePath } from '@/lib/site-path'
 
 export const metadata: Metadata = {
   title: 'Saline Music Repair App — Qier Long',
@@ -44,6 +45,7 @@ export default function SalineMusicRepairPage() {
       <section className="relative overflow-hidden bg-[#152a72] text-[#f8f5ed]">
         <Image
           src="/work/saline-music-repair/cover.png"
+          overrideSrc={sitePath('/work/saline-music-repair/cover.png')}
           alt="Saline Music Repair mobile app screens"
           width={2525}
           height={1415}
@@ -81,14 +83,14 @@ export default function SalineMusicRepairPage() {
         </div>
       </section>
 
-      <section className="bg-[#d9c29a] px-6 py-12 md:px-10 md:py-20"><div className="mx-auto max-w-6xl"><Image src="/work/saline-music-repair/scope.png" alt="Saline Music Repair service scope" width={2432} height={1322} className="h-auto w-full" /></div></section>
+      <section className="bg-[#d9c29a] px-6 py-12 md:px-10 md:py-20"><div className="mx-auto max-w-6xl"><Image src="/work/saline-music-repair/scope.png" overrideSrc={sitePath('/work/saline-music-repair/scope.png')} alt="Saline Music Repair service scope" width={2432} height={1322} className="h-auto w-full" /></div></section>
 
       <section className="mx-auto max-w-6xl px-6 py-20 md:px-10">
         <div className="mb-12 max-w-2xl"><p className="text-sm uppercase tracking-[0.18em] text-[#162a72]/60"><Localized en="Key flows" zh="核心流程" /></p><h2 className="mt-4 font-serif text-3xl md:text-5xl"><Localized en="One service, from request to pickup." zh="从维修申请到取件的一体化服务。" /></h2></div>
-        <div className="grid gap-12">{features.map((feature, index) => <article key={feature.number} className="grid items-center gap-8 border-t border-[#162a72]/20 pt-8 md:grid-cols-2"><div className={index % 2 ? 'md:order-2' : ''}><span className="text-sm tracking-[0.18em] text-[#162a72]/60">{feature.number}</span><h3 className="mt-3 font-serif text-3xl"><Localized en={feature.title.en} zh={feature.title.zh} /></h3><p className="mt-4 max-w-md leading-relaxed text-[#162a72]/75"><Localized en={feature.text.en} zh={feature.text.zh} /></p></div><Image src={feature.image} alt="Saline Music Repair interface detail" width={1680} height={1088} className="h-auto w-full" /></article>)}</div>
+        <div className="grid gap-12">{features.map((feature, index) => <article key={feature.number} className="grid items-center gap-8 border-t border-[#162a72]/20 pt-8 md:grid-cols-2"><div className={index % 2 ? 'md:order-2' : ''}><span className="text-sm tracking-[0.18em] text-[#162a72]/60">{feature.number}</span><h3 className="mt-3 font-serif text-3xl"><Localized en={feature.title.en} zh={feature.title.zh} /></h3><p className="mt-4 max-w-md leading-relaxed text-[#162a72]/75"><Localized en={feature.text.en} zh={feature.text.zh} /></p></div><Image src={feature.image} overrideSrc={sitePath(feature.image)} alt="Saline Music Repair interface detail" width={1680} height={1088} className="h-auto w-full" /></article>)}</div>
       </section>
 
-      <section className="bg-[#152a72] px-6 py-20 text-[#f8f5ed] md:px-10"><div className="mx-auto max-w-6xl"><div className="mb-10 flex flex-wrap items-end justify-between gap-4"><div><p className="text-sm uppercase tracking-[0.18em] text-[#f8f5ed]/60"><Localized en="Final interface" zh="最终界面" /></p><h2 className="mt-4 font-serif text-3xl md:text-5xl"><Localized en="Designed for clarity at a glance." zh="一眼看清每一个关键信息。" /></h2></div><p className="max-w-sm text-sm leading-relaxed text-[#f8f5ed]/75"><Localized en="A consistent system connects home, status, service selection, billing, and payment screens." zh="统一的设计系统连接首页、进度、服务选择、账单与付款页面。" /></p></div><Image src="/work/saline-music-repair/screens.png" alt="Saline Music Repair final mobile screens" width={3442} height={2063} className="h-auto w-full" /></div></section>
+      <section className="bg-[#152a72] px-6 py-20 text-[#f8f5ed] md:px-10"><div className="mx-auto max-w-6xl"><div className="mb-10 flex flex-wrap items-end justify-between gap-4"><div><p className="text-sm uppercase tracking-[0.18em] text-[#f8f5ed]/60"><Localized en="Final interface" zh="最终界面" /></p><h2 className="mt-4 font-serif text-3xl md:text-5xl"><Localized en="Designed for clarity at a glance." zh="一眼看清每一个关键信息。" /></h2></div><p className="max-w-sm text-sm leading-relaxed text-[#f8f5ed]/75"><Localized en="A consistent system connects home, status, service selection, billing, and payment screens." zh="统一的设计系统连接首页、进度、服务选择、账单与付款页面。" /></p></div><Image src="/work/saline-music-repair/screens.png" overrideSrc={sitePath('/work/saline-music-repair/screens.png')} alt="Saline Music Repair final mobile screens" width={3442} height={2063} className="h-auto w-full" /></div></section>
 
       <section className="px-6 py-20 md:px-10"><div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-8 md:flex-row md:items-end"><div><p className="text-sm uppercase tracking-[0.18em] text-[#162a72]/60"><Localized en="Outcome" zh="成果" /></p><h2 className="mt-4 max-w-2xl font-serif text-3xl md:text-5xl"><Localized en="A repair service that feels as carefully handled as the instrument itself." zh="像对待乐器一样，细致地对待每一次维修服务。" /></h2></div><Link href="/projects" className="border border-[#162a72] px-5 py-3 text-sm transition-colors hover:bg-[#162a72] hover:text-[#f8f5ed]"><Localized en="Back to projects" zh="返回项目列表" /></Link></div></section>
     </main>

@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { categories, type Project } from '@/lib/projects'
 import { Localized } from '@/components/localized'
+import { sitePath } from '@/lib/site-path'
 
 export function ProjectCard({
   project,
@@ -16,6 +17,7 @@ export function ProjectCard({
       <div className="relative aspect-[4/3] overflow-hidden bg-muted">
         <Image
           src={project.image || '/placeholder.svg'}
+          overrideSrc={sitePath(project.image || '/placeholder.svg')}
           alt={`${project.titleEn} — project preview`}
           fill
           priority={priority}

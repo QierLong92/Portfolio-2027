@@ -3,6 +3,7 @@ import { Inter, Playfair_Display } from 'next/font/google'
 import './globals.css'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
+import { sitePath } from '@/lib/site-path'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -21,8 +22,8 @@ export const metadata: Metadata = {
   description:
     'Qier Long’s personal design portfolio spanning graphic, information, UI/UX design and more.',
   icons: {
-    icon: '/icon.png',
-    apple: '/icon.png',
+    icon: sitePath('/icon.png'),
+    apple: sitePath('/icon.png'),
   },
 }
 
