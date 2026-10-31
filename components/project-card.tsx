@@ -10,7 +10,12 @@ export function ProjectCard({
   project: Project
   priority?: boolean
 }) {
-  const category = categories.find((c) => c.id === project.category)
+  const projectCategories = Array.isArray(project.category)
+    ? project.category
+    : [project.category]
+  const categoryLabels = projectCategories
+    .map((categoryId) => categories.find((c) => c.id === categoryId))
+    .filter((category): category is (typeof categories)[number] => Boolean(category))
 
   return (
     <article className="group">
@@ -36,9 +41,11 @@ export function ProjectCard({
         </span>
       </div>
       <div className="mt-3 flex items-center gap-3 text-xs uppercase tracking-widest text-muted-foreground">
-        <span className="border border-border px-2 py-1">
-          <Localized en={category?.label} zh={category?.zh} />
-        </span>
+        {categoryLabels.map((category) => (
+          <span key={category.id} className="border border-border px-2 py-1">
+            <Localized en={category.label} zh={category.zh} />
+          </span>
+        ))}
         <span>
           <Localized en={project.role} zh={project.roleZh} />
         </span>

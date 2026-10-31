@@ -50,7 +50,10 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-12 flex flex-col justify-between gap-2 border-t border-border pt-6 text-xs text-muted-foreground md:flex-row">
-          <span>© {new Date().getFullYear()} Qier Long. All rights reserved.</span>
+          <span>
+            © {new Date().getFullYear()}{' '}
+            <Localized en="Qier Long" zh="龙琪儿" />. All rights reserved.
+          </span>
           <span className="uppercase tracking-widest">
             <Localized en="Made with care" zh="用心制作" />
           </span>

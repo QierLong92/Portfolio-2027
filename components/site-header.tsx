@@ -23,7 +23,7 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-6xl items-center justify-between pb-4 pl-[max(1.5rem,env(safe-area-inset-left))] pr-[max(1.5rem,env(safe-area-inset-right))] pt-[max(1rem,env(safe-area-inset-top))] md:px-10">
         <Link href="/" className="flex flex-col leading-none">
           <span className="font-serif text-lg font-semibold tracking-tight">
-            Qier Long
+            <Localized en="Qier Long" zh="龙琪儿" />
           </span>
           <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
             <Localized en="Design Portfolio" zh="设计作品集" />

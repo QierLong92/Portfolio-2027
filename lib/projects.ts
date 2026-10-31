@@ -1,6 +1,7 @@
-export type Category = 'graphic' | 'information' | 'uiux' | 'others'
+export type Category = 'graphic' | 'experience' | 'information' | 'uiux' | 'others'
 
 export const categories: { id: Category; label: string; zh: string }[] = [
+  { id: 'experience', label: 'Experience Design', zh: '体验设计' },
   { id: 'graphic', label: 'Graphic Design', zh: '平面设计' },
   { id: 'information', label: 'Information Design', zh: '信息设计' },
   { id: 'uiux', label: 'UI/UX Design', zh: 'UI/UX 设计' },
@@ -11,7 +12,7 @@ export type Project = {
   slug: string
   title: string
   titleEn: string
-  category: Category
+  category: Category | Category[]
   year: string
   role: string
   roleZh: string
@@ -20,6 +21,18 @@ export type Project = {
 }
 
 export const projects: Project[] = [
+  {
+    slug: 'vibrant-design',
+    title: 'Vibrant: The Third Place',
+    titleEn: 'Vibrant: The Third Place',
+    category: ['experience', 'graphic'],
+    year: '2024',
+    role: 'Experience / Graphic Design',
+    roleZh: 'Experience / Graphic Design',
+    summary:
+      'An interactive public-transit campaign that uses posters, brochures, and station displays to make body language and shared space more visible.',
+    image: '/work/vibrant/ad-in-context.png',
+  },
   {
     slug: 'verdant-branding',
     title: 'Verdant 品牌视觉系统',
