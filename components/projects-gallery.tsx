@@ -52,7 +52,9 @@ export function ProjectsGallery() {
         {filtered.map((project, i) =>
           project.slug === 'saline-music-repair' ||
           project.slug === 'nypd-website-redesign' ||
-          project.slug === 'vibrant-design' ? (
+          project.slug === 'vibrant-design' ||
+          project.slug === 'umbrella-manufacturing-process' ||
+          project.slug === 'kelsey-museum' ? (
             <Link
               key={project.slug}
               href={`/projects/${project.slug}`}

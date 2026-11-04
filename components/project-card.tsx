@@ -27,7 +27,11 @@ export function ProjectCard({
           fill
           priority={priority}
           sizes="(max-width: 768px) 100vw, 50vw"
-          className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+          className={`transition-transform duration-500 group-hover:scale-[1.03] ${
+            project.slug === 'umbrella-manufacturing-process'
+              ? 'object-contain bg-[#bd806f]'
+              : 'object-cover'
+          }`}
         />
       </div>
       <div className="mt-4 flex items-start justify-between gap-4">
