@@ -70,7 +70,7 @@ export const projects: Project[] = [
     roleZh: 'UX/UI 设计',
     summary:
       'A mobile service platform that brings instrument repair requests, transparent pricing, real-time status, and pickup logistics into one place.',
-    image: '/work/saline-music-repair/cover.png',
+    image: '/work/saline-music-repair/prototype1.png',
   },
   {
     slug: 'nypd-website-redesign',
