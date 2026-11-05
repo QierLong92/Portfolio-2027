@@ -82,6 +82,6 @@ export const projects: Project[] = [
     roleZh: 'UX/UI 设计',
     summary:
       'A responsive website redesign for New York Pizza Depot, balancing local character, menu discovery, and a clearer ordering journey.',
-    image: '/work/nypd/responsive-web-full.png',
+    image: '/work/nypd/mock-up1.png',
   },
 ]
