@@ -15,7 +15,11 @@ export function ProjectsGallery() {
   const filtered =
     filter === 'all'
       ? projects
-      : projects.filter((p) => p.category === filter)
+      : projects.filter((p) =>
+          Array.isArray(p.category)
+            ? p.category.includes(filter)
+            : p.category === filter,
+        )
 
   const filters: { id: Filter; label: string; zh: string }[] = [
     { id: 'all', label: 'All', zh: '全部' },
@@ -47,7 +51,10 @@ export function ProjectsGallery() {
       <div className="grid gap-x-8 gap-y-12 md:grid-cols-2">
         {filtered.map((project, i) =>
           project.slug === 'saline-music-repair' ||
-          project.slug === 'nypd-website-redesign' ? (
+          project.slug === 'nypd-website-redesign' ||
+          project.slug === 'vibrant-design' ||
+          project.slug === 'umbrella-manufacturing-process' ||
+          project.slug === 'kelsey-museum' ? (
             <Link
               key={project.slug}
               href={`/projects/${project.slug}`}

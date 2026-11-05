@@ -20,7 +20,7 @@ export default function HomePage() {
         <h1 className="mt-6 max-w-4xl font-serif text-4xl leading-[1.1] text-balance md:text-6xl">
           <Localized
             en="I'm Qier Long, a multidisciplinary designer across graphic, information and UI/UX design."
-            zh="我是 Qier Long，一名跨越平面、信息与 UI/UX 设计领域的设计师。"
+            zh="我是龙琪儿，一名跨越平面、信息与 UI/UX 设计领域的设计师。"
           />
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">

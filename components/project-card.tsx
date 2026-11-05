@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { categories, type Project } from '@/lib/projects'
 import { Localized } from '@/components/localized'
+import { sitePath } from '@/lib/site-path'
 
 export function ProjectCard({
   project,
@@ -9,18 +10,28 @@ export function ProjectCard({
   project: Project
   priority?: boolean
 }) {
-  const category = categories.find((c) => c.id === project.category)
+  const projectCategories = Array.isArray(project.category)
+    ? project.category
+    : [project.category]
+  const categoryLabels = projectCategories
+    .map((categoryId) => categories.find((c) => c.id === categoryId))
+    .filter((category): category is (typeof categories)[number] => Boolean(category))
 
   return (
     <article className="group">
       <div className="relative aspect-[4/3] overflow-hidden bg-muted">
         <Image
           src={project.image || '/placeholder.svg'}
+          overrideSrc={sitePath(project.image || '/placeholder.svg')}
           alt={`${project.titleEn} — project preview`}
           fill
           priority={priority}
           sizes="(max-width: 768px) 100vw, 50vw"
-          className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+          className={`transition-transform duration-500 group-hover:scale-[1.03] ${
+            project.slug === 'umbrella-manufacturing-process'
+              ? 'object-contain bg-[#bd806f]'
+              : 'object-cover'
+          }`}
         />
       </div>
       <div className="mt-4 flex items-start justify-between gap-4">
@@ -34,9 +45,11 @@ export function ProjectCard({
         </span>
       </div>
       <div className="mt-3 flex items-center gap-3 text-xs uppercase tracking-widest text-muted-foreground">
-        <span className="border border-border px-2 py-1">
-          <Localized en={category?.label} zh={category?.zh} />
-        </span>
+        {categoryLabels.map((category) => (
+          <span key={category.id} className="border border-border px-2 py-1">
+            <Localized en={category.label} zh={category.zh} />
+          </span>
+        ))}
         <span>
           <Localized en={project.role} zh={project.roleZh} />
         </span>
