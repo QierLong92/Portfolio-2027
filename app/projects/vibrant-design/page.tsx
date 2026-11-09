@@ -78,11 +78,11 @@ export default function VibrantDesignPage() {
     <main className="bg-[#fbf7f0] text-[#1d1b3a]">
       <section className="relative overflow-hidden bg-[#31256a] text-[#fffaf0]">
         <Image
-          src="/work/vibrant/ad-in-context.png"
-          overrideSrc={sitePath('/work/vibrant/ad-in-context.png')}
-          alt="Vibrant campaign advertisements in a transit station"
-          width={2555}
-          height={1447}
+          src="/work/vibrant/posters.png"
+          overrideSrc={sitePath('/work/vibrant/posters.png')}
+          alt="Vibrant poster series"
+          width={3825}
+          height={2100}
           priority
           className="absolute inset-0 h-full w-full object-cover opacity-25"
         />

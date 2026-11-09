@@ -34,7 +34,7 @@ export const projects: Project[] = [
     roleZh: 'UX/UI 与体验设计',
     summary:
       'An AR museum artifact Pokédex that turns Roman history into a collection-driven adventure.',
-    image: '/work/kelsey-museum/frame-2.png',
+    image: '/work/kelsey-museum/kelsey-dex-tablet-p.png',
   },
   {
     slug: 'umbrella-manufacturing-process',
@@ -58,7 +58,7 @@ export const projects: Project[] = [
     roleZh: '体验 / 平面设计',
     summary:
       'An interactive public-transit campaign that uses posters, brochures, and station displays to make body language and shared space more visible.',
-    image: '/work/vibrant/ad-in-context.png',
+    image: '/work/vibrant/posters.png',
   },
   {
     slug: 'saline-music-repair',

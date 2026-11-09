@@ -63,11 +63,11 @@ export default function KelseyMuseumPage() {
     <main className="bg-[#fff8e9] text-[#54270f]">
       <section className="relative overflow-hidden bg-[#7e2808] text-[#fff8e9]">
         <Image
-          src="/work/kelsey-museum/frame-4.png"
-          overrideSrc={sitePath('/work/kelsey-museum/frame-4.png')}
-          alt="Kelsey Dex character story interface"
-          width={1134}
-          height={1134}
+          src="/work/kelsey-museum/kelsey-dex-tablet-p.png"
+          overrideSrc={sitePath('/work/kelsey-museum/kelsey-dex-tablet-p.png')}
+          alt="Kelsey Dex tablet experience in the museum"
+          width={1024}
+          height={1024}
           priority
           className="absolute inset-0 h-full w-full object-cover opacity-25"
         />
