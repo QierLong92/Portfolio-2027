@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import { ArrowUpRight, Laptop, RotateCcw } from 'lucide-react'
 import { Localized } from '@/components/localized'
+import { sitePath } from '@/lib/site-path'
 
 export const metadata: Metadata = {
   title: 'NYPD Website Redesign — Qier Long',
@@ -41,7 +43,8 @@ export default function NypdWebsiteRedesignPage() {
     <main className="bg-[#f4f1ed] text-[#211615]">
       <section className="relative overflow-hidden bg-[#922b20] text-[#fff9ef]">
         <Image
-          src="/work/nypd/responsive-web-full.png"
+          src="/work/nypd/mock-up1.png"
+          overrideSrc={sitePath('/work/nypd/mock-up1.png')}
           alt="NYPD responsive website across desktop, tablet, and mobile"
           width={2000}
           height={1125}
@@ -90,12 +93,45 @@ export default function NypdWebsiteRedesignPage() {
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-6xl gap-10 px-6 py-20 md:grid-cols-[1fr_1.4fr] md:px-10">
-        <p className="text-sm uppercase tracking-[0.18em] text-[#922b20]/65">
-          <Localized en="The opportunity" zh="设计机会" />
-        </p>
+      <section className="mx-auto grid max-w-6xl gap-16 px-6 py-20 md:grid-cols-[0.85fr_1.4fr] md:gap-24 md:px-10">
+        <div className="flex h-full flex-col">
+          <p className="text-sm uppercase tracking-[0.18em] text-[#922b20]/65">
+            <Localized en="The opportunity" zh="设计机会" />
+          </p>
+          <div className="mt-auto w-full max-w-[300px] pt-8">
+            <Image
+              src="/work/nypd/nypd-restaurant-photos.png"
+              overrideSrc={sitePath('/work/nypd/nypd-restaurant-photos.png')}
+              alt="NYPD restaurant photo"
+              width={1025}
+              height={1620}
+              className="h-auto w-full"
+            />
+          </div>
+        </div>
         <div>
-          <h2 className="font-serif text-3xl leading-tight md:text-5xl">
+          <div className="space-y-8">
+            <div>
+              <h2 className="font-serif text-2xl leading-tight md:text-3xl">
+                What is New York Pizza Depot?
+              </h2>
+              <p className="mt-4 max-w-2xl text-base leading-relaxed text-[#211615]/75 md:text-lg">
+                New York Pizza Depot (NYPD) is a casual pizzeria located in Ann Arbor, Michigan. They are known for serving authentic New York–style pizza by the slice or whole pie.
+              </p>
+            </div>
+            <div>
+              <h2 className="font-serif text-2xl leading-tight md:text-3xl">
+                Why NYPD?
+              </h2>
+              <p className="mt-4 max-w-2xl text-base leading-relaxed text-[#211615]/75 md:text-lg">
+                The restaurant offers a large and diverse menu that includes pizza, pasta, salads, calzones, sandwiches, and desserts.
+              </p>
+              <p className="mt-4 max-w-2xl text-base leading-relaxed text-[#211615]/75 md:text-lg">
+                With generous slice sizes, many topping options, and staying open until late night, it has become a popular spot for students, locals, and visitors looking for convenient and satisfying food near the University of Michigan campus.
+              </p>
+            </div>
+          </div>
+          <h2 className="mt-12 font-serif text-2xl leading-tight md:text-3xl">
             <Localized
               en="Make a local favorite easier to discover and order."
               zh="让本地人喜爱的披萨店更容易被发现，也更容易下单。"
@@ -110,15 +146,92 @@ export default function NypdWebsiteRedesignPage() {
         </div>
       </section>
 
-      <section className="bg-[#171313] px-6 py-12 md:px-10 md:py-20">
+      <section className="px-6 py-12 md:px-10 md:py-20">
         <div className="mx-auto max-w-6xl">
           <Image
             src="/work/nypd/brand-gallery.png"
+            overrideSrc={sitePath('/work/nypd/brand-gallery.png')}
             alt="NYPD restaurant photography and brand imagery"
             width={2000}
             height={1400}
             className="h-auto w-full"
           />
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-6 py-20 md:px-10 md:py-28">
+        <h2 className="font-serif text-4xl md:text-5xl">
+          <Localized en="Project Goals" zh="项目目标" />
+        </h2>
+        <div className="mt-16 grid gap-12 md:grid-cols-3 md:gap-10">
+          <div>
+            <Laptop className="h-10 w-10 text-[#922b20]" strokeWidth={1.8} />
+            <h3 className="mt-8 font-serif text-2xl leading-tight">
+              <Localized en="Improve Website Usability" zh="提升网站易用性" />
+            </h3>
+            <p className="mt-5 text-lg leading-relaxed text-[#211615]/80">
+              <Localized
+                en="Redesign the NYPD Pizza website to improve navigation and make it easier for users to quickly find menu items, location information, and ordering options."
+                zh="重新设计 NYPD 披萨网站，改善导航，让用户更快找到菜单、位置信息和下单选项。"
+              />
+            </p>
+          </div>
+          <div>
+            <RotateCcw className="h-10 w-10 text-[#922b20]" strokeWidth={1.8} />
+            <h3 className="mt-8 font-serif text-2xl leading-tight">
+              <Localized
+                en="Streamline the Online Ordering Experience"
+                zh="简化在线点单体验"
+              />
+            </h3>
+            <p className="mt-5 text-lg leading-relaxed text-[#211615]/80">
+              <Localized
+                en="Create a more intuitive and efficient online ordering flow so customers can easily browse the menu and place orders with fewer steps."
+                zh="打造更直观高效的在线点单流程，让顾客用更少的步骤浏览菜单并完成下单。"
+              />
+            </p>
+          </div>
+          <div>
+            <ArrowUpRight className="h-10 w-10 text-[#922b20]" strokeWidth={1.8} />
+            <h3 className="mt-8 font-serif text-2xl leading-tight">
+              <Localized
+                en="Strengthen the Digital Brand Presence"
+                zh="强化数字品牌形象"
+              />
+            </h3>
+            <p className="mt-5 text-lg leading-relaxed text-[#211615]/80">
+              <Localized
+                en="Enhance the visual design and overall user experience of the website to better reflect NYPD’s New York-style pizza identity and appeal to University of Michigan students and local customers."
+                zh="提升网站视觉设计与整体用户体验，更好地体现 NYPD 的纽约风格披萨定位，并吸引密歇根大学学生与本地顾客。"
+              />
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="px-6 py-20 md:px-10 md:py-28">
+        <div className="mx-auto max-w-6xl">
+          <p className="text-3xl uppercase tracking-[0.18em] text-[#922b20]/65">
+            <Localized en="Design system" zh="设计系统" />
+          </p>
+          <div className="mt-12 flex flex-col items-center gap-10">
+            <Image
+              src="/work/nypd/typefaces.png"
+              overrideSrc={sitePath('/work/nypd/typefaces.png')}
+              alt="NYPD typography system"
+              width={4816}
+              height={1926}
+              className="h-auto w-full max-w-3xl"
+            />
+            <Image
+              src="/work/nypd/color-components.png"
+              overrideSrc={sitePath('/work/nypd/color-components.png')}
+              alt="NYPD color components"
+              width={960}
+              height={945}
+              className="h-auto w-full max-w-2xl"
+            />
+          </div>
         </div>
       </section>
 
@@ -153,10 +266,11 @@ export default function NypdWebsiteRedesignPage() {
               </div>
               <Image
                 src={screen.image}
+                overrideSrc={sitePath(screen.image)}
                 alt={`${screen.title.en} interface`}
                 width={1800}
                 height={1200}
-                className={`h-auto w-full ${index % 2 ? 'md:order-1' : ''}`}
+                className={`h-auto w-full ${index === 2 ? 'max-w-md justify-self-center' : ''} ${index % 2 ? 'md:order-1' : ''}`}
               />
             </article>
           ))}
@@ -167,6 +281,7 @@ export default function NypdWebsiteRedesignPage() {
         <div className="mx-auto max-w-6xl">
           <Image
             src="/work/nypd/checkout-page.png"
+            overrideSrc={sitePath('/work/nypd/checkout-page.png')}
             alt="NYPD checkout flow"
             width={1600}
             height={1200}
@@ -198,6 +313,7 @@ export default function NypdWebsiteRedesignPage() {
           </div>
           <Image
             src="/work/nypd/responsive-web.png"
+            overrideSrc={sitePath('/work/nypd/responsive-web.png')}
             alt="NYPD responsive website system"
             width={2000}
             height={1000}
