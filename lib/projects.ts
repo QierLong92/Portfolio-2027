@@ -46,7 +46,7 @@ export const projects: Project[] = [
     roleZh: '平面 / 信息设计',
     summary:
       'An illustrated guide that makes the hidden sequence, components, and assembly logic of umbrella manufacturing easy to follow.',
-    image: '/work/umbrella-manufacturing/umbrella-process-poster.jpg',
+    image: '/work/umbrella-manufacturing/cover-presentation.png',
   },
   {
     slug: 'vibrant-design',
@@ -58,7 +58,7 @@ export const projects: Project[] = [
     roleZh: '体验 / 平面设计',
     summary:
       'An interactive public-transit campaign that uses posters, brochures, and station displays to make body language and shared space more visible.',
-    image: '/work/vibrant/posters.png',
+    image: '/work/vibrant/cover-presentation.png',
   },
   {
     slug: 'saline-music-repair',

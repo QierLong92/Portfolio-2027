@@ -91,10 +91,10 @@ export default function UmbrellaManufacturingProcessPage() {
           </div>
           <div className="flex items-center justify-center border-t border-[#fffdf7]/15 bg-[#bd806f] p-8 md:border-l md:border-t-0 md:p-12">
             <ProjectImage
-              src="/work/umbrella-manufacturing/umbrella-process-poster.jpg"
-              alt="Umbrella manufacturing process poster"
-              width={2169}
-              height={2169}
+              src="/work/umbrella-manufacturing/cover-presentation.png"
+              alt="Umbrella manufacturing project presentation cover"
+              width={1536}
+              height={1024}
               className="max-w-[32rem] shadow-2xl"
             />
           </div>
